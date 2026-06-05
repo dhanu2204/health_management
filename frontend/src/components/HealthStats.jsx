@@ -26,7 +26,11 @@ const HealthStats = () => {
     useEffect(() => {
         const fetchAndAnalyzeData = async () => {
             try {
-                const userId = 1;
+                const storedUser = localStorage.getItem("user");
+                if (!storedUser) return;
+                const parsedUser = JSON.parse(storedUser);
+                const userId = parsedUser.id;
+                
                 const response = await axios.get(`https://health-management-e61z.onrender.com/api/documents/user/${userId}`);
                 const documents = response.data;
 
