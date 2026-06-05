@@ -27,7 +27,7 @@ const HealthStats = () => {
         const fetchAndAnalyzeData = async () => {
             try {
                 const userId = 1;
-                const response = await axios.get(`http://localhost:8080/api/documents/user/${userId}`);
+                const response = await axios.get(`https://health-management-e61z.onrender.com/api/documents/user/${userId}`);
                 const documents = response.data;
 
                 if (!documents || documents.length === 0) {

@@ -26,7 +26,7 @@ function Home({ onNavigate }) {
           setCurrentUser(parsedUser);
           
           // Fetch exact document count for the user
-          axios.get(`http://localhost:8080/api/documents/user/${parsedUser.id}`)
+          axios.get(`https://health-management-e61z.onrender.com/api/documents/user/${parsedUser.id}`)
             .then(res => {
               setDocumentCount(res.data.length);
             })

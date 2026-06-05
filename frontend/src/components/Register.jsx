@@ -26,7 +26,7 @@ const Register = () => {
         }
 
         try{
-            const response = await fetch("http://localhost:8080/users/register",{
+            const response = await fetch("https://health-management-e61z.onrender.com/users/register",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

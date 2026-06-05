@@ -10,8 +10,8 @@ const MedicalVault = () => {
         if (!url) return "#";
         if (url.startsWith("http")) return url;
         // If the URL in DB doesn't have uploads folder, we append it for older records
-        if (!url.startsWith("uploads/")) return `http://localhost:8080/uploads/${url}`;
-        return `http://localhost:8080/${url}`;
+        if (!url.startsWith("uploads/")) return `https://health-management-e61z.onrender.com/uploads/${url}`;
+        return `https://health-management-e61z.onrender.com/${url}`;
     };
 
     const formatAIResponse = (text) => {
@@ -47,7 +47,7 @@ const MedicalVault = () => {
                 const parsedUser = JSON.parse(storedUser);
                 
                 if (parsedUser && parsedUser.id) {
-                    const response = await axios.get(`http://localhost:8080/api/documents/user/${parsedUser.id}`);
+                    const response = await axios.get(`https://health-management-e61z.onrender.com/api/documents/user/${parsedUser.id}`);
                     setDocuments(response.data);
                 }
             } catch (error) {
@@ -64,7 +64,7 @@ const MedicalVault = () => {
         if (!window.confirm("Are you sure you want to delete this document?")) return;
 
         try {
-            await axios.delete(`http://localhost:8080/api/documents/${docId}`);
+            await axios.delete(`https://health-management-e61z.onrender.com/api/documents/${docId}`);
             // Remove the deleted document from the screen instantly
             setDocuments(prevDocs => prevDocs.filter(doc => doc.id !== docId));
         } catch (error) {

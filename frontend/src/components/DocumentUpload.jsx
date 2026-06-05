@@ -94,7 +94,7 @@ function DocumentUpload() {
       }
 
       try {
-        await axios.post('http://localhost:8080/api/documents/upload', formData, {
+        await axios.post('https://health-management-e61z.onrender.com/api/documents/upload', formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
         console.log("Image securely saved to Medical Digital Vault.");
