@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #24963f; /* Your Rating Green */
+    --primary-hover: #1c7c32;
+    --text-color: #1c1c1c;
+    --card-bg: #ffffff;
+    --bg-light: #f8f8f8;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    font-family: Arial, sans-serif;
+}
+
+.auth-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px; /* Same as RestaurantCard */
+    padding: 2.5rem;
+    box-shadow: var(--shadow); /* Same as RestaurantCard */
+    transition: transform 0.3s ease; /* Same as RestaurantCard */
+    border: 1px solid #e8e8e8;
+}
+
+.auth-container:hover {
+    transform: translateY(-5px); /* Same as RestaurantCard hover */
+}
+
+.auth-form h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #cfcfcf;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.auth-footer-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #696969;
+}
+
+.auth-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
