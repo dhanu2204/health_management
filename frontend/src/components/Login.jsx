@@ -28,19 +28,21 @@ const Login = () => {
       });
 
       if (response.ok) {
-    const user = await response.json(); // Use .json() instead of .text()
-    
-    if (user) {
-        localStorage.setItem("user", JSON.stringify(user));
-        alert("Login Successful! Welcome " + user.name);
-        navigate("/home");
-    } else {
-        alert("Invalid Email or Password. Please try again.");
+        const text = await response.text(); // Read as text first because backend sends empty response on failure
+        
+        if (text) {
+            const user = JSON.parse(text);
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Login Successful! Welcome " + user.name);
+            navigate("/home");
+        } else {
+            // Backend returned null (empty text) meaning wrong password
+            alert("Invalid Email or Password. Please try again.");
+        }
+      } else {
+        alert("Server error. Please try again later.");
+      }
     }
-} else {
-    alert("Server error. Please try again later.");
-}
-}
     catch(error){
       console.log("Connection error:"+error);
       alert("Network connection , is the server running");
